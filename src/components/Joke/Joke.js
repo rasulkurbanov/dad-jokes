@@ -4,7 +4,7 @@ import './Joke.css'
 function Joke(props) {
 
   function getColor(votes) {
-    if (votes <= -2) {
+    if (votes <= -1) {
       return "#f44336"
     }
     if (votes >= 0 && votes < 2) {
@@ -31,7 +31,7 @@ function Joke(props) {
     if (votes <= -5) {
       return "em em-disappointed_relieved"
     }
-    if (votes <= -2) {
+    if (votes <= -1) {
       return "em em-angry"
     }
     if (votes >= 0 && votes < 2) {
@@ -55,7 +55,6 @@ function Joke(props) {
   }
 
 
-
   return (
     <div className="Joke">
       <div className="Joke-buttons">
@@ -63,7 +62,7 @@ function Joke(props) {
         <span className="Joke-votes" style={{ borderColor: getColor(props.votes) }}>{props.votes}</span>
         <i className="fa fa-arrow-up" onClick={props.upvote} />
       </div>
-      <div className="Joke-text">{props.index}: {props.text}</div>
+      <div className="Joke-text">{props.text}</div>
       <div className="Joke-smiley">
         <i className={getEmoji(props.votes)}></i>
       </div>
